@@ -5,7 +5,6 @@ html, body {
 }
 
 body {
-    background:url('/public/images/cedric-bg.jpg');
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
     text-transform:uppercase;
@@ -17,10 +16,16 @@ p, ul, li {
     font-weight: 400;
 }
 
-#page-wrapper {
-    height: 70%;
+#page-wrapper, #page, #header {
+    height: 100%;
     background-attachment: scroll;
     background-position: center center;
+}
+
+#page-wrapper, body {
+    background: url('/images/cedric-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #navigation {
@@ -68,14 +73,43 @@ p, ul, li {
     font-weight: 500;
 }
 
+#navigation.sticky-nav {
+    position: fixed;
+    z-index: 90;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    transition: background 0.6s;
+}
 
+#name-and-slogan {
+    position: relative;
+    padding-top: 230px;
+}
 
+h1#site-name, div#site-name {
+    margin: 0;
+    font-size: 2em;
+    line-height: 1.3em;
+}
 
+h1#site-name {
+    text-align: center;
+    padding: 30px 0 10px;
+    font-family: "brandon-grotesque-n7", "brandon-grotesque", "sans-serif";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: 10px;
+    text-rendering: optimizeLegibility;
+}
 
+h1#site-name a {
+    color: #f7eee6 !important;
+}
 
-
-
-
-
-
-
+#site-name a:link, #site-name a:visited {
+    color: #000;
+    text-decoration: none;
+}
