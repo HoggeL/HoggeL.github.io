@@ -23,7 +23,7 @@ p, ul, li {
 }
 
 #page-wrapper, body {
-    background: url('/images/cedric-bg.jpg');
+    background: url('/public/images/cedric-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
