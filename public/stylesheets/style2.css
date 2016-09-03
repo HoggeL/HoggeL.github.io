@@ -135,10 +135,10 @@ h1#site-name a {
     margin-right: -100%;
     padding: 0;
 }
-#main, #content, .section {
+#main #content .section {
     background: #dee6ec;
 }
-#content, .section, .no-sidebars #content .section {
+#content .section, .no-sidebars #content .section {
     margin: 0;
     padding: 0;
 }
