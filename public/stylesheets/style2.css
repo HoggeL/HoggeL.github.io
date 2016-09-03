@@ -16,6 +16,11 @@ p, ul, li {
     font-weight: 400;
 }
 
+#header, #content, #navigation, .region-sidebar-first, .region-sidebar-second, #footer, .region-page-closure {
+    overflow: visible;
+    word-wrap: break-word;
+}
+
 #page-wrapper, #page, #header {
     height: 100%;
     background-attachment: scroll;
@@ -112,4 +117,34 @@ h1#site-name a {
 #site-name a:link, #site-name a:visited {
     color: #000;
     text-decoration: none;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#main-wrapper {
+    position: relative;
+}
+#content {
+    float: left;
+    width: 100%;
+    margin-left: 0;
+    margin-right: -100%;
+    padding: 0;
+}
+#main, #content, .section {
+    background: #dee6ec;
+}
+#content, .section, .no-sidebars #content .section {
+    margin: 0;
+    padding: 0;
+}
+
+.region-content-top {
+    width: 960px;
+    margin: 0 auto;
+    padding: 150px 0 80px;
 }
