@@ -266,3 +266,13 @@ h2 {
     float: left;
     margin-bottom: 20px;
 }
+
+#footer-text {
+    color: #ccc;
+    padding: 35px 0 35px 50px;
+    font-family: "brandon-grotesque-n4", "brandon-grotesque", sans-serif;
+    font-style: normal;
+    letter-spacing: 2px;
+    font-weight: 400;
+    background: url(/public/images/footer-pattern.png);
+}
