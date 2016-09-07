@@ -144,6 +144,19 @@ h2 {
     color: #000;
     text-decoration: none;
 }
+
+#site-slogan {
+    font-family: "brandon-grotesque-i5", "brandon-grotesque", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #a2abb2;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 24px;
+    background: url(/public/images/line.png) center top no-repeat;
+}
+
 .clearfix:after {
     content: ".";
     display: block;
