@@ -122,6 +122,17 @@ h1#site-name a {
     color: #f7eee6 !important;
 }
 
+h2 {
+    font-family: "brandon-grotesque-n5", "brandon-grotesque", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.3em;
+    margin-top: 0.667em;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
 #site-name a:link, #site-name a:visited {
     color: #000;
     text-decoration: none;
