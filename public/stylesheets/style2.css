@@ -10,6 +10,10 @@ body {
     text-transform:uppercase;
 }
 
+p {
+    margin: 0 0 1em 0 !important;
+}
+
 p, ul, li {
     font-family: "brandon-grotesque-n4", "brandon-grotesque", sans-serif;
     font-style: normal;
@@ -159,7 +163,6 @@ h1#site-name a {
 }
 
 .block, .view-thumbnails {
-    !important;
     margin-bottom: 0;
 }
 
@@ -184,4 +187,17 @@ h1#site-name a {
     letter-spacing: 0;
     margin-bottom: 1em;
     margin-top: 0;
+}
+
+.view-thumbnails p {
+    color: #5e5e5e;
+    font-family: "brandon-grotesque-i4", "brandon-grotesque", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 0;
+    width: 260px;
+    padding-bottom: 5px;
+    padding-top: 45px;
+    text-transform: none;
+    font-size: 14px;
 }
