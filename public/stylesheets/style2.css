@@ -41,6 +41,13 @@ p, ul, li {
     background-attachment: fixed;
 }
 
+#skip-link, #page {
+    font-size: 0.75cm;
+    line-height: 1.333cm;
+    font-size: 0.765em;
+    line-height: 1.586em;
+}
+
 #navigation {
     font-size: 12px;
     margin-top: 20px;
