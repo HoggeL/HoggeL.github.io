@@ -10,6 +10,10 @@ body {
     text-transform:uppercase;
 }
 
+img {
+    border: 0;
+}
+
 p {
     margin: 0 0 1em 0 !important;
 }
@@ -212,6 +216,10 @@ h1#site-name a {
     margin: 0 0 40px 40px;
 }
 
+.node-type-page p {
+    text-align: justify;
+}
+
 #node7.node-type-page {
     padding-bottom: 0 !important;
 }
@@ -236,4 +244,14 @@ h1#site-name a {
     font-size: 18px;
     line-height: 26px;
     color: #6c6d6e;
+}
+
+#node-7 .content .left-text {
+    margin-right: 40px;
+}
+
+#node-7 .content div {
+    width: 420px;
+    float: left;
+    margin-bottom: 20px;
 }
