@@ -149,10 +149,10 @@ h1#site-name a {
     padding: 150px 0 80px;
 }
 
-.block, .view-thumbnails {
-    margin-bottom: 0;
-}
-
 .block {
     margin-bottom: 1em;
+}
+
+.block, .view-thumbnails {
+    margin-bottom: 0;
 }
