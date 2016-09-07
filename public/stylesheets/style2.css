@@ -201,3 +201,39 @@ h1#site-name a {
     text-transform: none;
     font-size: 14px;
 }
+
+#content-area .views-row {
+    background: #15191d;
+}
+
+.node-type-page, .node-type-webform {
+    color: #5e5e5e;
+    padding: 30px 35px 14px;
+    margin: 0 0 40px 40px;
+}
+
+#node7.node-type-page {
+    padding-bottom: 0 !important;
+}
+
+#node-7.node-type-page {
+    width: 880px;
+    margin: 0 auto;
+    padding: 120px 40px;
+}
+
+.node-type-page h2.title, .node-type-webform h2.title {
+    padding-bottom: 15px;
+    color: #fff;
+    letter-spacing: 5px;
+    text-align: center;
+    background: url(/public/images/line.png) center bottom no-repeat;
+    padding-bottom: 30px;
+}
+
+#node-7 .content {
+    text-transform: none;
+    font-size: 18px;
+    line-height: 26px;
+    color: #6c6d6e;
+}
