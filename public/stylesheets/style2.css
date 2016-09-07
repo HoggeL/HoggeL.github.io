@@ -170,3 +170,18 @@ h1#site-name a {
     position: relative;
     height: 265px;
 }
+
+.view-thumbnails h2.title {
+    font-family: "brandon-grotesque-n4","brandon-grotesque",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    color: #222;
+    font-weight: normal;
+    text-decoration: none;
+    position: absolute;
+    top: 159px;
+    letter-spacing: 0;
+    margin-bottom: 1em;
+    margin-top: 0;
+}
