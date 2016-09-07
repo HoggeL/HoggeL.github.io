@@ -153,7 +153,20 @@ h1#site-name a {
     margin-bottom: 1em;
 }
 
+.view-thumbnails {
+    height: 595px;
+    margin-bottom: 40px;
+}
+
 .block, .view-thumbnails {
     !important;
     margin-bottom: 0;
+}
+
+.view-thumbnails .views-row {
+    width: 260px;
+    float: left;
+    margin: 0 10px 0 40px;
+    position: relative;
+    height: 265px;
 }
