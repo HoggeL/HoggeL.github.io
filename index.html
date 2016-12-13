@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<title>Håkan Levin</title>
-		<link rel='stylesheet' href='./public/stylesheets/style2.css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel='stylesheet' href='./public/stylesheets/style.css'>
 		<link rel='icon' type='image/png' href='./public/images/favicon.png'/>
-		
 		<script>
 			var slideshowIndices = [];
 			
@@ -33,6 +33,20 @@
 				}
 				x[slideshowIndices[classname]-1].style.display = "block";
 			}
+			
+			var numberOpen = -1;
+			function view(num) {
+				//showdiv(1, 'subpage_slide', 'slideshow_iframe')
+				if (numberOpen === num) {
+					return;
+				}
+				var x = document.getElementById('slideshow_iframe');
+				if (x.className == '')
+					x.className = 'empty';
+				else
+					x.className = '';
+				
+			}
 		</script>
 	</head>
 	<body>
@@ -52,13 +66,13 @@
 						<div id='navigation'>
 							<ul>
 								<li>
-									<a href='#main'>WORK</a>
+									<a href='#main'><b>WORK</b></a>
 								</li>
 								<li>
-									<a href='#node-7'>ABOUT</a>
+									<a href='#node-7'><b>ABOUT</b></a>
 								</li>
 								<li>
-									<a href='/'>CONTACT</a>
+									<a href='/'><b>CONTACT</b></a>
 								</li>
 							</ul>
 						</div>
@@ -69,22 +83,24 @@
 						<div id="content" class="column">
 							<div class="section">
 								<div class="region region-content-top">
-									<iframe width="100%" id="slideshow_iframe" name="slideshow_iframe" frameBorder="0"></iframe>
+									<iframe width="100%" id="slideshow_iframe" class="empty" name="slideshow_iframe" frameBorder="0" onload="showdiv(1, 'subpage_slide', 'slideshow_iframe')"></iframe>
 									<div id="block-views-videos-block_1" class="block block-views region-odd odd region-count-1 count-1">
 										<div class="content">
 											<div class="view view-thumbnails view-id-thumbnails view-display-id-block_1 view-dom-id-2 view-thumbnails view-id-thumbnails view-display-id-block_1 view-dom-id-2 views-processed">
 												<div class="view-content">
 													<div class="views-row">
-                                                            <h2 class="title">Ludosity's Steamworks Wrapper</h2>
-															<a href="./project/steamworks.html" target="slideshow_iframe" onclick="showdiv(1, 'steamworks_slide', 'slideshow_iframe')">
-																<img src="./public/images/placeholder.jpg" alt="Placeholder 1" title="Placeholder 1" width="250" height="135">
-															</a>
-															<p>A managed C# wrapper for Valve's steamworks API</p>    
+														<h2 class="title">Ludosity's Steamworks Wrapper</h2>
+														<a href="./project/steamworks.html" target="slideshow_iframe" onclick="view(1)">
+															<img src="./public/images/placeholder.jpg" alt="Steamworks" title="Steamworks" width="250" height="135">
+														</a>
+														<p>A managed C# wrapper for Valve's steamworks API</p>    
 													</div>
 													<div class="views-row">
-                                                        <h2 class="title">Placeholder 2</h2>
-                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 2" title="Placeholder 2" width="250" height="135">
-                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+                                                        <h2 class="title">Skydive</h2>
+														<a href="/project/skydive.html" target="slideshow_iframe" onclick="view(2)">
+															<img src="./public/images/placeholder.jpg" alt="Skydive" title="Skydive" width="250" height="135">
+                                                        </a>
+														<p>Project made in University with X other students</p>
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Placeholder 3</h2>

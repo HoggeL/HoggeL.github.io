@@ -36,7 +36,7 @@ p, ul, li {
 }
 
 #page-wrapper, body {
-    background: url('../images/cedric-bg.jpg');
+    background: url('../images/hogge-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -117,7 +117,7 @@ h1#site-name, div#site-name {
 h1#site-name {
     text-align: center;
     padding: 30px 0 10px;
-    font-family: "brandon-grotesque-n7", "brandon-grotesque", "sans-serif";
+    font-family: "Arial", "sans-serif";
     font-style: normal;
     font-weight: 700;
     font-size: 50px;
@@ -295,4 +295,8 @@ h2 {
     letter-spacing: 2px;
     font-weight: 400;
     background: url(../images/footer-pattern.png);
+}
+
+iframe.empty {
+	height: 0px
 }

@@ -1,0 +1,19 @@
+.bluebox {
+  width: 100%;
+  height: 300px;
+  background-color: #222299;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s; }
+
+.nobox {
+  width: 100%;
+  height: 0px;
+  background-color: #222299;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s; }
+
+.toggle {
+  font-decoration: none;
+  font-size: 36px; }
