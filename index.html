@@ -2,8 +2,38 @@
 <html>
 	<head>
 		<title>Håkan Levin</title>
-		<link rel='stylesheet' href='/public/stylesheets/style2.css'>
-		<link rel='icon' type='image/png' href='/public/images/favicon.png'/>
+		<link rel='stylesheet' href='./public/stylesheets/style2.css'>
+		<link rel='icon' type='image/png' href='./public/images/favicon.png'/>
+		
+		<script>
+			var slideshowIndices = [];
+			
+			function plusdiv(index, classname) {
+				showdiv(slideshowIndices[classname] += index);
+			}
+			function showdiv(index, classname, iframecontainer = '') {
+				if (!(classname in slideshowIndices)) { slideshowIndices[classname] = 1 }
+				var i;
+				var x;
+				if (iframecontainer == '' || typeof iframecontainer != "string") { x = document.getElementsByClassName(classname); }
+				else { 
+					x = document.getElementById(iframecontainer).contentWindow.postMessage(
+						{'function': 'showdiv', 
+						 'index': index, 
+						 'classname': classname
+						}, '*');
+					return; 
+				}
+				
+				if (x.length <= 0) return;
+				if (index > x.length) { slideshowIndices[classname] = 1 }
+				if (index < 1) { slideshowIndices[classname] = x.length }
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				x[slideshowIndices[classname]-1].style.display = "block";
+			}
+		</script>
 	</head>
 	<body>
 		<div id='page-wrapper'>
@@ -39,111 +69,42 @@
 						<div id="content" class="column">
 							<div class="section">
 								<div class="region region-content-top">
+									<iframe width="100%" id="slideshow_iframe" name="slideshow_iframe" frameBorder="0"></iframe>
 									<div id="block-views-videos-block_1" class="block block-views region-odd odd region-count-1 count-1">
 										<div class="content">
 											<div class="view view-thumbnails view-id-thumbnails view-display-id-block_1 view-dom-id-2 view-thumbnails view-id-thumbnails view-display-id-block_1 view-dom-id-2 views-processed">
 												<div class="view-content">
-													<div class="views-row views-row-1 views-row-odd views-row-first">
-                                                        <div id="node-1" class="node node-type-thumbnail node-promoted node-teaser clearfix">
-                                                            <h2 class="title">Placeholder 1</h2>
-                                                            <div class="content">
-                                                                <div class="field field-type-thumbnail field-field-thumbnail">
-                                                                    <div class="field-items">
-                                                                        <div class="field-item off">
-                                                                            <div class="thumbnail-modal thumbnail-lightbox2">
-                                                                                <img src="/public/images/placeholder.jpg" alt="Placeholder 1" title="Placeholder 1" width="250" height="135">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+													<div class="views-row">
+                                                            <h2 class="title">Ludosity's Steamworks Wrapper</h2>
+															<a href="./project/steamworks.html" target="slideshow_iframe" onclick="showdiv(1, 'steamworks_slide', 'slideshow_iframe')">
+																<img src="./public/images/placeholder.jpg" alt="Placeholder 1" title="Placeholder 1" width="250" height="135">
+															</a>
+															<p>A managed C# wrapper for Valve's steamworks API</p>    
 													</div>
-													<div class="views-row views-row-2 views-row-even">
-                                                        <div id="node-2" class="node node-type-thumbnail node-promoted node-teaser clearfix">
-                                                            <h2 class="title">Placeholder 2</h2>
-                                                            <div class="content">
-                                                                <div class="field field-type-thumbnail field-field-thumbnail">
-                                                                    <div class="field-items">
-                                                                        <div class="field-item off">
-                                                                            <div class="thumbnail-modal thumbnail-lightbox2">
-                                                                                <img src="/public/images/placeholder.jpg" alt="Placeholder 2" title="Placeholder 2" width="250" height="135">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+													<div class="views-row">
+                                                        <h2 class="title">Placeholder 2</h2>
+                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 2" title="Placeholder 2" width="250" height="135">
+                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
 													</div>
-													<div class="views-row views-row-3 views-row-odd">
-                                                        <div id="node-3" class="node node-type-thumbnail node-promoted node-teaser clearfix">
-                                                            <h2 class="title">Placeholder 3</h2>
-                                                            <div class="content">
-                                                                <div class="field field-type-thumbnail field-field-thumbnail">
-                                                                    <div class="field-items">
-                                                                        <div class="field-item off">
-                                                                            <div class="thumbnail-modal thumbnail-lightbox2">
-                                                                                <img src="/public/images/placeholder.jpg" alt="Placeholder 3" title="Placeholder 3" width="250" height="135">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+													<div class="views-row">
+                                                        <h2 class="title">Placeholder 3</h2>
+                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 3" title="Placeholder 3" width="250" height="135">
+                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
 													</div>
-													<div class="views-row views-row-4 views-row-even">
-                                                        <div id="node-4" class="node node-type-thumbnail node-promoted node-teaser clearfix">
-                                                            <h2 class="title">Placeholder 4</h2>
-                                                            <div class="content">
-                                                                <div class="field field-type-thumbnail field-field-thumbnail">
-                                                                    <div class="field-items">
-                                                                        <div class="field-item off">
-                                                                            <div class="thumbnail-modal thumbnail-lightbox2">
-                                                                                <img src="/public/images/placeholder.jpg" alt="Placeholder 4" title="Placeholder 4" width="250" height="135">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+													<div class="views-row">
+                                                        <h2 class="title">Placeholder 4</h2>
+                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 4" title="Placeholder 4" width="250" height="135">
+                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
 													</div>
-													<div class="views-row views-row-5 views-row-odd">
-                                                        <div id="node-5" class="node node-type-thumbnail node-promoted node-teaser clearfix">
-                                                            <h2 class="title">Placeholder 5</h2>
-                                                            <div class="content">
-                                                                <div class="field field-type-thumbnail field-field-thumbnail">
-                                                                    <div class="field-items">
-                                                                        <div class="field-item off">
-                                                                            <div class="thumbnail-modal thumbnail-lightbox2">
-                                                                                <img src="/public/images/placeholder.jpg" alt="Placeholder 5" title="Placeholder 5" width="250" height="135">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+													<div class="views-row">
+                                                        <h2 class="title">Placeholder 5</h2>
+                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 5" title="Placeholder 5" width="250" height="135">
+                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
 													</div>
-													<div class="views-row views-row-6 views-row-even views-row-last">
-                                                        <div id="node-6" class="node node-type-thumbnail node-promoted node-teaser clearfix">
-                                                            <h2 class="title">Placeholder 6</h2>
-                                                            <div class="content">
-                                                                <div class="field field-type-thumbnail field-field-thumbnail">
-                                                                    <div class="field-items">
-                                                                        <div class="field-item off">
-                                                                            <div class="thumbnail-modal thumbnail-lightbox2">
-                                                                                <img src="/public/images/placeholder.jpg" alt="Placeholder 6" title="Placeholder 6" width="250" height="135">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+													<div class="views-row">
+                                                        <h2 class="title">Placeholder 6</h2>
+                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 6" title="Placeholder 6" width="250" height="135">
+                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
 													</div>
 												</div>
 											</div>
@@ -158,7 +119,7 @@
                                                     <h2 class="title">About Me</h2>
                                                     <div class="content">
                                                         <div class="left-text">
-                                                            <img src="/public/images/placeholder-portrait.jpeg">
+                                                            <img src="./public/images/placeholder-portrait.jpeg">
                                                         </div>
                                                         <div class="right-text">
                                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet lectus ac rhoncus feugiat. Aenean aliquam mauris ac ligula maximus molestie. Fusce in gravida dolor, sed vehicula nunc. Sed sit amet hendrerit ex, ut mattis erat. Suspendisse potenti. Quisque cursus posuere ex. Integer egestas leo eget nisl suscipit, lacinia ultrices tortor tempor. Mauris ullamcorper ipsum ut lectus fringilla, et venenatis massa dignissim. Suspendisse maximus neque sed eros fringilla sodales. Curabitur vel sem orci. Nunc sit amet tellus nec velit porta varius at ac leo. Sed ac efficitur magna. Maecenas porta lectus porttitor, sagittis ligula et, ultrices urna. Mauris elit neque, hendrerit id aliquet eu, congue blandit velit. Aenean at accumsan augue. Integer pulvinar diam risus, non varius lorem vehicula et.</p>
@@ -179,6 +140,5 @@
 				</div>
 			</div>
 		</div>
-		<div id="lightbox-overlay" style="width: 100%; height: 100%; background-color: rgb(0, 0, 0); opacity: 0.8"></div>
 	</body>
 </html>
