@@ -8,14 +8,8 @@
 	<script>
 	function eventHandler(event) {
 		var origin = event.origin || event.originalEvent.origin;
-		console.log(origin);
-		if (origin === 'http://hoggelevin.me')
-		{
-			console.log(event.data);
-		}
-		else {
-			return;
-		}
+		console.log(event.data);
+		console.log(typeof origin);
 	}
 	</script>
 	</head>
