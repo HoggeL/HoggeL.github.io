@@ -9,7 +9,7 @@
 	function eventHandler(event) {
 		var origin = event.origin || event.originalEvent.origin;
 		console.log(origin);
-		if (origin.indexOf('http://hoggelevin.me'))
+		if (origin === 'http://hoggelevin.me')
 		{
 			console.log(event.data);
 		}
