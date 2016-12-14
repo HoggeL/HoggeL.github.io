@@ -2,21 +2,45 @@
 	<head>
 	<link rel='stylesheet' href='/public/stylesheets/subpage_style.css'>
 	<script>
-	function eventHandler(event) {
-		var origin = event.origin || event.originalEvent.origin;
+	
+	var slideIndex = 1;
+	function plusdiv(classname, amount) {
+		showdiv(classname, slideIndex + amount);
+	}
+	
+	function showdiv(classname, index) {
+		var x = document.getElementsByClassName(classname);
+		slideIndex = index;
+		if (slideIndex > x.length) { slideIndex = 1; }
+		if (slideIndex < 1) { slideIndex = x.length; }
+		for (var i = 0; i < x.length; i++)
+		{
+			x[i].style.display = "none";
+		}
+		x[slideIndex - 1].style.display = "block";
 	}
 	
 	function init() {
-		window.addEventListener('message', eventHandler);
+		showdiv('subpage_slide', slideIndex);
 	}
 	
 	</script>
 	</head>
-	<body onload="init()">
-		<img class="subpage_slide" src="/public/images/be-kind.jpg">
-		<img class="subpage_slide" src="/public/images/be-kind.jpg">
-		<img class="subpage_slide" src="/public/images/be-kind.jpg">
-		<img class="subpage_slide" src="/public/images/be-kind.jpg">
-		<img class="subpage_slide" src="/public/images/be-kind.jpg">
+	<body>
+		<div class="image-container">
+			<a class="button-floating button-left" onclick="plusdiv('subpage_slide', -1)">&#10094</a>
+			<a class="button-floating button-right" onclick="plusdiv('subpage_slide', 1)">&#10095</a>
+			<img class="subpage_slide" src="/public/images/be-kind.jpg">
+			<img class="subpage_slide" src="/public/images/be-kind.jpg">
+			<img class="subpage_slide" src="/public/images/be-kind.jpg">
+			<img class="subpage_slide" src="/public/images/be-kind.jpg">
+			<img class="subpage_slide" src="/public/images/be-kind.jpg">
+		</div>
+		<div class="text-container">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet lectus ac rhoncus feugiat. Aenean aliquam mauris ac ligula maximus molestie. Fusce in gravida dolor, sed vehicula nunc. Sed sit amet hendrerit ex, ut mattis erat. Suspendisse potenti. Quisque cursus posuere ex. Integer egestas leo
+		</div>
+		<script>
+			init();
+		</script>
 	</body>
 </html>
