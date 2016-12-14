@@ -32,7 +32,7 @@ p, ul, li
     background-position: center center
 
 #page-wrapper, body
-    background: url('../images/hogge-bg.jpg')
+    background: url('/public/images/hogge-bg.jpg')
     background-size: cover
     background-attachment: fixed
 
@@ -162,7 +162,7 @@ h2
 .region-content-top
     width: 960px
     margin: 0 auto
-    padding: 150px 0 80px
+    padding: 75px 0 80px
 
 .block
     margin-bottom: 1em
@@ -257,5 +257,21 @@ h2
     font-weight: 400
     background: url(/public/images/footer-pattern.png)
 
+iframe
+	overflow: hidden
+	+transition(all 1.0s ease-in-out)
+	
 iframe.empty
 	height: 0px
+
+iframe.occupied
+	height: 300px
+
+iframe#slideshow_iframe
+	width: 870px;
+	padding-bottom: 75px
+	margin-left: 40px;
+	margin-right: 50px;
+	
+a[data-href]
+	cursor: pointer

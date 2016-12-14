@@ -6,50 +6,72 @@
 		<link rel='stylesheet' href='./public/stylesheets/style.css'>
 		<link rel='icon' type='image/png' href='./public/images/favicon.png'/>
 		<script>
-			var slideshowIndices = [];
-			
-			function plusdiv(index, classname) {
-				showdiv(slideshowIndices[classname] += index);
-			}
-			function showdiv(index, classname, iframecontainer = '') {
-				if (!(classname in slideshowIndices)) { slideshowIndices[classname] = 1 }
-				var i;
-				var x;
-				if (iframecontainer == '' || typeof iframecontainer != "string") { x = document.getElementsByClassName(classname); }
-				else { 
-					x = document.getElementById(iframecontainer).contentWindow.postMessage(
-						{'function': 'showdiv', 
-						 'index': index, 
-						 'classname': classname
-						}, '*');
-					return; 
-				}
-				
-				if (x.length <= 0) return;
-				if (index > x.length) { slideshowIndices[classname] = 1 }
-				if (index < 1) { slideshowIndices[classname] = x.length }
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = "none";
-				}
-				x[slideshowIndices[classname]-1].style.display = "block";
+		/*
+		function plusdiv(url, amount) {
+			slideshowIndices[url] += amount;
+			showdiv(url, 'slideshow_iframe');
+		}
+		function showdiv(iframeid) {
+			var x = document.getElementById(iframeid);
+			if (x) {
+				x.contentWindow.postMessage(
+				{'function': 'showdiv', 
+				 'index': 1, 
+				 'classname': 'subpage_slide'
+				}, '*');
 			}
 			
-			var numberOpen = -1;
-			function view(num) {
-				//showdiv(1, 'subpage_slide', 'slideshow_iframe')
-				if (numberOpen === num) {
-					return;
-				}
-				var x = document.getElementById('slideshow_iframe');
-				if (x.className == '')
-					x.className = 'empty';
-				else
-					x.className = '';
-				
+			
+			if (x.length <= 0) return;
+			if (index > x.length) { slideshowIndices[classname] = 1 }
+			if (index < 1) { slideshowIndices[classname] = x.length }
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
 			}
+			x[slideshowIndices[classname]-1].style.display = "block";
+			
+		}
+		*/
+		
+		var urlOpen = '';
+		var isOpen = false;
+		function view(url) {
+			console.log(isOpen);
+			var x = document.getElementById('slideshow_iframe');
+			if (isOpen && url != urlOpen) {
+				//Do a transition and close/open with new page
+				x.className = 'empty';
+				setTimeout(function() {
+					x.className = 'occupied';
+					x.contentDocument.location.href = url;
+				}, 1000);
+				isOpen = true;
+				console.log("A");
+			}
+			else if (isOpen) {
+				//This'll mean that the same view has been clicked, so we just close the iframe
+				x.className = 'empty';
+				isOpen = false;
+				console.log("B");
+			}
+			else if (!isOpen) {
+				x.contentDocument.location.href = url;
+				x.className = 'occupied';
+				isOpen = true;
+				console.log("C");
+			}
+			
+			
+			if (isOpen)
+				urlOpen = url;
+		}
+		
+		function init() {
+			$('body').on('click', 'a[data-href]', function() { view($(this).data('href')); });
+		}
 		</script>
 	</head>
-	<body>
+	<body onload="init()">
 		<div id='page-wrapper'>
 			<div id='page'>
 				<div id='header'>
@@ -83,21 +105,21 @@
 						<div id="content" class="column">
 							<div class="section">
 								<div class="region region-content-top">
-									<iframe width="100%" id="slideshow_iframe" class="empty" name="slideshow_iframe" frameBorder="0" onload="showdiv(1, 'subpage_slide', 'slideshow_iframe')"></iframe>
+									<iframe width="100%" id="slideshow_iframe" class="empty" name="slideshow_iframe" frameBorder="0" scrolling="no"></iframe>
 									<div id="block-views-videos-block_1" class="block block-views region-odd odd region-count-1 count-1">
 										<div class="content">
 											<div class="view view-thumbnails view-id-thumbnails view-display-id-block_1 view-dom-id-2 view-thumbnails view-id-thumbnails view-display-id-block_1 view-dom-id-2 views-processed">
 												<div class="view-content">
 													<div class="views-row">
 														<h2 class="title">Ludosity's Steamworks Wrapper</h2>
-														<a href="./project/steamworks.html" target="slideshow_iframe" onclick="view(1)">
-															<img src="./public/images/placeholder.jpg" alt="Steamworks" title="Steamworks" width="250" height="135">
+														<a data-href="/project/steamworks.html">
+															<img src="/public/images/placeholder.jpg" alt="Steamworks" title="Steamworks" width="250" height="135">
 														</a>
 														<p>A managed C# wrapper for Valve's steamworks API</p>    
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Skydive</h2>
-														<a href="/project/skydive.html" target="slideshow_iframe" onclick="view(2)">
+														<a data-href="/project/skydive.html">
 															<img src="./public/images/placeholder.jpg" alt="Skydive" title="Skydive" width="250" height="135">
                                                         </a>
 														<p>Project made in University with X other students</p>

@@ -1,23 +1,22 @@
 <html>
 	<head>
-	<style>
-		.subpage_slide {
-			display: none;
-		}
-	</style>
+	<link rel='stylesheet' href='/public/stylesheets/subpage_style.css'>
 	<script>
 	function eventHandler(event) {
 		var origin = event.origin || event.originalEvent.origin;
-		console.log(event.data);
-		console.log(typeof origin);
 	}
+	
+	function init() {
+		window.addEventListener('message', eventHandler);
+	}
+	
 	</script>
 	</head>
-	<body bgcolor="green" onload="window.addEventListener('message', eventHandler)">
-		<img class="subpage_slide" src="../public/images/placeholder-portrait.jpeg">
-		<img class="subpage_slide" src="../public/images/placeholder-portrait.jpeg">
-		<img class="subpage_slide" src="../public/images/placeholder-portrait.jpeg">
-		<img class="subpage_slide" src="../public/images/placeholder-portrait.jpeg">
-		<img class="subpage_slide" src="../public/images/placeholder-portrait.jpeg">
+	<body onload="init()">
+		<img class="subpage_slide" src="/public/images/be-kind.jpg">
+		<img class="subpage_slide" src="/public/images/be-kind.jpg">
+		<img class="subpage_slide" src="/public/images/be-kind.jpg">
+		<img class="subpage_slide" src="/public/images/be-kind.jpg">
+		<img class="subpage_slide" src="/public/images/be-kind.jpg">
 	</body>
 </html>
