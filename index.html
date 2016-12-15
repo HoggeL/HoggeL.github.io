@@ -3,36 +3,7 @@
 	<head>
 		<title>Håkan Levin</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<link rel='stylesheet' href='./public/stylesheets/style.css'>
-		<link rel='icon' type='image/png' href='./public/images/favicon.png'/>
 		<script>
-		/*
-		function plusdiv(url, amount) {
-			slideshowIndices[url] += amount;
-			showdiv(url, 'slideshow_iframe');
-		}
-		function showdiv(iframeid) {
-			var x = document.getElementById(iframeid);
-			if (x) {
-				x.contentWindow.postMessage(
-				{'function': 'showdiv', 
-				 'index': 1, 
-				 'classname': 'subpage_slide'
-				}, '*');
-			}
-			
-			
-			if (x.length <= 0) return;
-			if (index > x.length) { slideshowIndices[classname] = 1 }
-			if (index < 1) { slideshowIndices[classname] = x.length }
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			x[slideshowIndices[classname]-1].style.display = "block";
-			
-		}
-		*/
-		
 		var urlOpen = '';
 		var isOpen = false;
 		function view(url) {
@@ -70,6 +41,9 @@
 			$('body').on('click', 'a[data-href]', function() { view($(this).data('href')); });
 		}
 		</script>
+		
+		<link rel='stylesheet' href='./public/stylesheets/style.css'>
+		<link rel='icon' type='image/png' href='./public/images/favicon.png'/>
 	</head>
 	<body onload="init()">
 		<div id='page-wrapper'>
@@ -122,22 +96,26 @@
 														<p>Project made in University with X other students</p>
 													</div>
 													<div class="views-row">
-                                                        <h2 class="title">Placeholder 3</h2>
+                                                        <h2 class="title">Magicka: Wizards of the Square Tablet</h2>
                                                         <img src="./public/images/placeholder.jpg" alt="Placeholder 3" title="Placeholder 3" width="250" height="135">
                                                         <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
 													</div>
 													<div class="views-row">
-                                                        <h2 class="title">Placeholder 4</h2>
-                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 4" title="Placeholder 4" width="250" height="135">
-                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+                                                        <h2 class="title">Ittle Dew</h2>
+														<a data-href="/project/ittledew.html">
+															<img src="/public/images/ittle_thumbnail.png" alt="Ittle Dew" title="Ittle Dew" width="250" height="135">
+														</a>
+														<p>I handled the porting of Ittle Dew to Ouya, which entailed some optimisation and pooling of resources</p>
 													</div>
 													<div class="views-row">
-                                                        <h2 class="title">Placeholder 5</h2>
-                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 5" title="Placeholder 5" width="250" height="135">
-                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+                                                        <h2 class="title">Fret Nice QA</h2>
+														<a data-href="/project/fretnice.html">
+                                                        <img src="./public/images/fretnice_thumbnail.png" alt="Fret Nice" title="Fret Nice" width="250" height="135">
+                                                        </a>
+														<p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
 													</div>
 													<div class="views-row">
-                                                        <h2 class="title">Placeholder 6</h2>
+                                                        <h2 class="title">Various school projects</h2>
                                                         <img src="./public/images/placeholder.jpg" alt="Placeholder 6" title="Placeholder 6" width="250" height="135">
                                                         <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
 													</div>
