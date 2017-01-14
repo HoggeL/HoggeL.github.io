@@ -255,7 +255,7 @@ h2 {
   padding-bottom: 0 !important;
 }
 
-#node-7.node-type-page {
+#aboutme.node-type-page {
   width: 880px;
   margin: 0 auto;
   padding: 120px 40px;
@@ -270,18 +270,18 @@ h2 {
   padding-bottom: 30px;
 }
 
-#node-7 .content {
+#aboutme .content {
   text-transform: none;
   font-size: 18px;
   line-height: 26px;
   color: #6c6d6e;
 }
 
-#node-7 .content .left-text {
+#aboutme .content .left-text {
   margin-right: 40px;
 }
 
-#node-7 .content div {
+#aboutme .content div {
   width: 420px;
   float: left;
   margin-bottom: 20px;

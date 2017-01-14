@@ -1,43 +1,24 @@
 <html>
 	<head>
 	<link rel='stylesheet' href='/public/stylesheets/subpage_style.css'>
-	<script>
-	
-	var slideIndex = 1;
-	function plusdiv(classname, amount) {
-		showdiv(classname, slideIndex + amount);
-	}
-	
-	function showdiv(classname, index) {
-		var x = document.getElementsByClassName(classname);
-		slideIndex = index;
-		if (slideIndex > x.length) { slideIndex = 1; }
-		if (slideIndex < 1) { slideIndex = x.length; }
-		for (var i = 0; i < x.length; i++)
-		{
-			x[i].style.display = "none";
-		}
-		x[slideIndex - 1].style.display = "block";
-	}
-	
-	function init() {
-		showdiv('subpage_slide', slideIndex);
-	}
-	
-	</script>
+	<script src="/public/javascript/subpage.js"></script>
 	</head>
 	<body>
 		<div class="image-container">
 			<a class="button-floating button-left" onclick="plusdiv('subpage_slide', -1)">&#10094</a>
 			<a class="button-floating button-right" onclick="plusdiv('subpage_slide', 1)">&#10095</a>
-			<img class="subpage_slide" src="/public/images/be-kind.jpg">
-			<img class="subpage_slide" src="/public/images/be-kind.jpg">
-			<img class="subpage_slide" src="/public/images/be-kind.jpg">
-			<img class="subpage_slide" src="/public/images/be-kind.jpg">
-			<img class="subpage_slide" src="/public/images/be-kind.jpg">
+			
+			<img class="subpage_slide" src="/public/images/skydive_1.png">
+			<img class="subpage_slide" src="/public/images/skydive_2.png">
 		</div>
 		<div class="text-container">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet lectus ac rhoncus feugiat. Aenean aliquam mauris ac ligula maximus molestie. Fusce in gravida dolor, sed vehicula nunc. Sed sit amet hendrerit ex, ut mattis erat. Suspendisse potenti. Quisque cursus posuere ex. Integer egestas leo
+			<h2>Skydive</h2>
+			<div class="platform">Platforms: Unavailable</div>
+			<div class="release">Release date: June 6, 2012</div>
+			<p>This game was created together with 16 other student over ten weeks as part of a course called Game Development Project 2.</p>
+			<p>We decided to create this game using Unreal Development Kit, which helped the project in multiple ways. For example, this meant that our designers could use the landscape tool to create the map.</p>
+			<p>My main responsibility was to create some of the actual gameplay, meaning things like the trick and score system.</p>
+			<p>After the ten weeks, the project was continued for short while by a smaller group of people, but was ultimately abandoned.</p>
 		</div>
 		<script>
 			init();

@@ -1,42 +1,28 @@
 <html>
 	<head>
 	<link rel='stylesheet' href='/public/stylesheets/subpage_style.css'>
-	<script>
-	
-	var slideIndex = 1;
-	function plusdiv(classname, amount) {
-		showdiv(classname, slideIndex + amount);
-	}
-	
-	function showdiv(classname, index) {
-		var x = document.getElementsByClassName(classname);
-		slideIndex = index;
-		if (slideIndex > x.length) { slideIndex = 1; }
-		if (slideIndex < 1) { slideIndex = x.length; }
-		for (var i = 0; i < x.length; i++)
-		{
-			x[i].style.display = "none";
-		}
-		x[slideIndex - 1].style.display = "block";
-	}
-	
-	function init() {
-		showdiv('subpage_slide', slideIndex);
-	}
-	
-	</script>
+	<script src="/public/javascript/subpage.js"></script>
 	</head>
 	<body>
 		<div class="image-container">
 			<a class="button-floating button-left" onclick="plusdiv('subpage_slide', -1)">&#10094</a>
 			<a class="button-floating button-right" onclick="plusdiv('subpage_slide', 1)">&#10095</a>
-			<img class="subpage_slide" src="/public/images/ittle_1.png">
-			<img class="subpage_slide" src="/public/images/ittle_1.png">
-			<img class="subpage_slide" src="/public/images/ittle_1.png">
-			<img class="subpage_slide" src="/public/images/ittle_1.png">
+			<img class="subpage_slide" src="/public/images/ittle_2.png">
+			<img class="subpage_slide" src="/public/images/ittle_3.png">
+			<img class="subpage_slide" src="/public/images/ittle_4.png">
+			<img class="subpage_slide" src="/public/images/ittle_5.png">
 		</div>
 		<div class="text-container">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet lectus ac rhoncus feugiat. Aenean aliquam mauris ac ligula maximus molestie. Fusce in gravida dolor, sed vehicula nunc. Sed sit amet hendrerit ex, ut mattis erat. Suspendisse potenti. Quisque cursus posuere ex. Integer egestas leo
+			<h2>Ittle Dew</h2>
+			<div class="platform">Platforms: Windows, Mac, Linux, Wii U, iOS, Android</div>
+			<div class="release">Release date: July 23, 2013</div>
+			<p>The first time I was employed at Ludosity was to work on Ittle Dew close to it's release. I mainly worked on fixing minor bugs.</p>
+			<p>After release I also did my first porting job for Ludosity, I was supposed to get Ittle Dew onto the Ouya, which was somewhat of a challenge.</p>
+			<p>None of the shaders would initially load, resulting in just a pink screen for some builds. Once the game was playable it ran at about five frames per second. So there was alot of optimization to do.</p>
+			<p>Even though some effects had to be scaled down somewhat, the game was able to launch successfully</p>
+			<p>
+				<a href="http://www.ittledew.com/id1/" target="_blank">Ittle Dew 1, Ludosity</a>
+			</p>
 		</div>
 		<script>
 			init();

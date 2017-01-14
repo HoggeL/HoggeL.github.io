@@ -1,49 +1,17 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Portfolio, Programmer, Game Development">
+		<meta name="description" content="Online Portfolio">
+		<meta name="author" content="Håkan Levin Henriksson">
 		<title>Håkan Levin</title>
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script>
-		var urlOpen = '';
-		var isOpen = false;
-		function view(url) {
-			console.log(isOpen);
-			var x = document.getElementById('slideshow_iframe');
-			if (isOpen && url != urlOpen) {
-				//Do a transition and close/open with new page
-				x.className = 'empty';
-				setTimeout(function() {
-					x.className = 'occupied';
-					x.contentDocument.location.href = url;
-				}, 1000);
-				isOpen = true;
-				console.log("A");
-			}
-			else if (isOpen) {
-				//This'll mean that the same view has been clicked, so we just close the iframe
-				x.className = 'empty';
-				isOpen = false;
-				console.log("B");
-			}
-			else if (!isOpen) {
-				x.contentDocument.location.href = url;
-				x.className = 'occupied';
-				isOpen = true;
-				console.log("C");
-			}
-			
-			
-			if (isOpen)
-				urlOpen = url;
-		}
-		
-		function init() {
-			$('body').on('click', 'a[data-href]', function() { view($(this).data('href')); });
-		}
-		</script>
-		
-		<link rel='stylesheet' href='./public/stylesheets/style.css'>
-		<link rel='icon' type='image/png' href='./public/images/favicon.png'/>
+		<script src="/public/javascript/index.js"></script>
+
+		<link rel='stylesheet' href='/public/stylesheets/style.css'>
+		<link rel='icon' type='image/png' href='/public/images/favicon.png'/>
 	</head>
 	<body onload="init()">
 		<div id='page-wrapper'>
@@ -65,7 +33,7 @@
 									<a href='#main'><b>WORK</b></a>
 								</li>
 								<li>
-									<a href='#node-7'><b>ABOUT</b></a>
+									<a href='#aboutme'><b>ABOUT</b></a>
 								</li>
 							</ul>
 						</div>
@@ -84,40 +52,44 @@
 													<div class="views-row">
 														<h2 class="title">Ludosity's Steamworks Wrapper</h2>
 														<a data-href="/project/steamworks.html">
-															<img src="/public/images/placeholder.jpg" alt="Steamworks" title="Steamworks" width="250" height="135">
+															<img src="/public/images/steamworks_thumbnail.png" alt="Steamworks" title="Steamworks" width="250" height="135">
 														</a>
 														<p>A managed C# wrapper for Valve's steamworks API</p>    
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Skydive</h2>
 														<a data-href="/project/skydive.html">
-															<img src="./public/images/placeholder.jpg" alt="Skydive" title="Skydive" width="250" height="135">
+															<img src="/public/images/skydive_thumbnail.png" alt="Skydive" title="Skydive" width="250" height="135">
                                                         </a>
-														<p>Project made in University with X other students</p>
+														<p>Extreme sport game where you fly down a mountain in a skydiving suit</p>
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Magicka: Wizards of the Square Tablet</h2>
-                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 3" title="Placeholder 3" width="250" height="135">
-                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+                                                        <a data-href="/project/magicka.html">
+															<img src="/public/images/magicka_thumbnail.png" alt="Magicka: WotST" title="Magicka: WotST" width="250" height="135">
+                                                        </a>
+														<p>Travel through the world of Magicka, incinerating your friends along the way</p>
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Ittle Dew</h2>
 														<a data-href="/project/ittledew.html">
 															<img src="/public/images/ittle_thumbnail.png" alt="Ittle Dew" title="Ittle Dew" width="250" height="135">
 														</a>
-														<p>I handled the porting of Ittle Dew to Ouya, which entailed some optimisation and pooling of resources</p>
+														<p>Adventuress Ittle dew and Tippsie crash onto a strange island. Get ready for their greatest adventure yet.</p>
 													</div>
 													<div class="views-row">
-                                                        <h2 class="title">Fret Nice QA</h2>
+                                                        <h2 class="title">Fret Nice</h2>
 														<a data-href="/project/fretnice.html">
-                                                        <img src="./public/images/fretnice_thumbnail.png" alt="Fret Nice" title="Fret Nice" width="250" height="135">
+															<img src="/public/images/fretnice_thumbnail.png" alt="Fret Nice" title="Fret Nice" width="250" height="135">
                                                         </a>
-														<p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+														<p>Musical platformer designed to be played with a Guitar Hero controller</p>
 													</div>
 													<div class="views-row">
-                                                        <h2 class="title">Various school projects</h2>
-                                                        <img src="./public/images/placeholder.jpg" alt="Placeholder 6" title="Placeholder 6" width="250" height="135">
-                                                        <p>Placeholder Placeholder Placeholder Placeholder Placeholder</p>
+                                                        <h2 class="title">School projects</h2>
+														<a data-href="/project/school.html">
+															<img src="/public/images/school_thumbnail.png" alt="School" title="School" width="250" height="135">
+                                                        </a>
+														<p>A showcase of a couple of smaller school projects</p>
 													</div>
 												</div>
 											</div>
@@ -128,15 +100,18 @@
                                     <div class="view view-home view-id-home view-display-id-page_1 view-dom-id-1 view-home view-id-home view-display-id-page_1 view-dom-id-1">
                                         <div class="view-content">
                                             <div class="views-row views-row-1 views-row-odd views-row-first">
-                                                <div id="node-7" class="node node-type-page clearfix">
+                                                <div id="aboutme" class="node node-type-page clearfix">
                                                     <h2 class="title">About Me</h2>
                                                     <div class="content">
                                                         <div class="left-text">
                                                             <img src="/public/images/placeholder-portrait.jpeg">
                                                         </div>
                                                         <div class="right-text">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet lectus ac rhoncus feugiat. Aenean aliquam mauris ac ligula maximus molestie. Fusce in gravida dolor, sed vehicula nunc. Sed sit amet hendrerit ex, ut mattis erat. Suspendisse potenti. Quisque cursus posuere ex. Integer egestas leo eget nisl suscipit, lacinia ultrices tortor tempor. Mauris ullamcorper ipsum ut lectus fringilla, et venenatis massa dignissim. Suspendisse maximus neque sed eros fringilla sodales. Curabitur vel sem orci. Nunc sit amet tellus nec velit porta varius at ac leo. Sed ac efficitur magna. Maecenas porta lectus porttitor, sagittis ligula et, ultrices urna. Mauris elit neque, hendrerit id aliquet eu, congue blandit velit. Aenean at accumsan augue. Integer pulvinar diam risus, non varius lorem vehicula et.</p>
-                                                            <p>Mauris sed ornare ligula. Nullam volutpat molestie semper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin ac cursus metus. Etiam scelerisque fermentum velit vel aliquet. Nam vitae dui ut sem sagittis mollis. Integer suscipit neque in ligula mollis, et lobortis tellus fermentum. Praesent placerat ante sed augue venenatis facilisis. Quisque id diam ligula. Etiam eu ex arcu.</p>
+															<p>My name is Håkan Levin Henriksson, I'm 26 years old and I live in Sweden. I grew up in Stockholm, where I attended primary school and also my first year of high school before I moved to Dalarna, one of Swedens counties, where I finished high school.</p>
+															<p>During my second year in high school, when I was 16, I took a course in computer programming where we were taught the basics of C++, and I was immediately interested.</p>
+															<p>I've always had an interest in computers and how they work, I started learning HTML when I was just 13, but I really didn't know how to start build applications at that point. So when I started learning C++, my knowledge about computers in general was also deepened considerably.</p>
+															<p>Once I graduated from high school I attended the University of Skövde where I further studied programming and computer science. Since then I have worked for a total of two years in the game development industry, for a short while as a quality assurance tester, but mainly as a programmer.</p>
+															<p>During my time as a programmer, I've mainly worked with C# using Unity Game Engine and Android based platforms. I also spent much time working with C++ for Windows, Mac and Linux based systems.</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -149,7 +124,7 @@
 					</div>
 				</div>
 				<div id='footer-text'>
-					All rights reserved. Håkan Levin 2016.
+					All rights reserved. Håkan Levin 2017.
 				</div>
 			</div>
 		</div>

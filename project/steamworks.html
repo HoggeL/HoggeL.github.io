@@ -1,42 +1,22 @@
 <html>
 	<head>
 	<link rel='stylesheet' href='/public/stylesheets/subpage_style.css'>
-	<script>
-	
-	var slideIndex = 1;
-	function plusdiv(classname, amount) {
-		showdiv(classname, slideIndex + amount);
-	}
-	
-	function showdiv(classname, index) {
-		var x = document.getElementsByClassName(classname);
-		slideIndex = index;
-		if (slideIndex > x.length) { slideIndex = 1; }
-		if (slideIndex < 1) { slideIndex = x.length; }
-		for (var i = 0; i < x.length; i++)
-		{
-			x[i].style.display = "none";
-		}
-		x[slideIndex - 1].style.display = "block";
-	}
-	
-	function init() {
-		showdiv('subpage_slide', slideIndex);
-	}
-	
-	</script>
+	<script src="/public/javascript/subpage.js"></script>
 	</head>
 	<body>
 		<div class="image-container">
-			<a class="button-floating button-left" onclick="plusdiv('subpage_slide', -1)">&#10094</a>
-			<a class="button-floating button-right" onclick="plusdiv('subpage_slide', 1)">&#10095</a>
-			<img class="subpage_slide" src="/public/images/steamworks_1.jpg">
-			<img class="subpage_slide" src="/public/images/steamworks_2.jpg">
-			<img class="subpage_slide" src="/public/images/steamworks_3.jpg">
-			<img class="subpage_slide" src="/public/images/steamworks_4.jpg">
+			<img class="subpage_slide" src="/public/images/steamworks_1.png">
 		</div>
 		<div class="text-container">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet lectus ac rhoncus feugiat. Aenean aliquam mauris ac ligula maximus molestie. Fusce in gravida dolor, sed vehicula nunc. Sed sit amet hendrerit ex, ut mattis erat. Suspendisse potenti. Quisque cursus posuere ex. Integer egestas leo
+			<h2>Ludosity's Steamworks Wrapper</h2>
+			<div class="platform">Platforms: Windows, Mac, Linux</div>
+			<div class="release">Release date: November 1, 2011 (Original version). September 4, 2014 (Current version)</div>
+			<p>Continuing the development of this project was my first task when joining the company as an intern. After catching up on the current code, it quickly became up to date.</p>
+			<p>With the lowered price from $300 to $50, continious updates and customer support the plugin gained popularity fast and was used by a great deal of developers wanting to get their game on steam.</p>
+			<p>The project was discontinued late in 2014 when I left the company. The code went open-source, but never gained much attention due to the dropped support and rising popularity of competitor steamworks.net</p>
+			<p>
+				<a href="https://github.com/HoggeL/Ludosity-s-Steamworks-Wrapper" target="_blank">My github fork of the project</a>
+			</p>
 		</div>
 		<script>
 			init();
