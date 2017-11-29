@@ -1,3 +1,10 @@
+.project-slideshow {
+	height: 300px;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	font-family: Arial, Helvetica, sans-serif;
+}
 html, body {
   height: 300px;
   margin: 0px;

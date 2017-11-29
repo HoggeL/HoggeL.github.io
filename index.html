@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -8,9 +8,9 @@
 		<title>Håkan Levin</title>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="/public/javascript/index.js"></script>
+		<script src="./public/javascript/index.js"></script>
 
-		<link rel='stylesheet' href='/public/stylesheets/style.css'>
+		<link rel='stylesheet' href='./public/stylesheets/style.css'>
 		<link rel='icon' type='image/png' href='/public/images/favicon.png'/>
 	</head>
 	<body onload="init()">
@@ -44,50 +44,181 @@
 						<div id="content" class="column">
 							<div class="section">
 								<div class="region region-content-top">
-									<iframe width="100%" id="slideshow_iframe" class="empty" name="slideshow_iframe" frameBorder="0" scrolling="no"></iframe>
+									<div id="project-display">
+										<div class="project-slideshow empty">
+											<div id="ittledew-container">
+												<div class="image-container">
+													<a class="button-floating button-left" onclick="plusdiv('ittledew-slide', -1)">&#10094</a>
+													<a class="button-floating button-right" onclick="plusdiv('ittledew-slide', 1)">&#10095</a>
+													<img class="ittledew-slide" src="./public/images/ittle_2.png">
+													<img class="ittledew-slide" src="./public/images/ittle_3.png">
+													<img class="ittledew-slide" src="./public/images/ittle_4.png">
+													<img class="ittledew-slide" src="./public/images/ittle_5.png">
+												</div>
+												<div class="text-container">
+												<h2>Ittle Dew</h2>
+													<div class="platform">Platforms: Windows, Mac, Linux, Wii U, iOS, Android</div>
+													<div class="release">Release date: July 23, 2013</div>
+													<p>The first time I was employed at Ludosity was to work on Ittle Dew close to it's release. I mainly worked on fixing minor bugs.</p>
+													<p>After release I also did my first porting job for Ludosity, I was supposed to get Ittle Dew onto the Ouya, which was somewhat of a challenge.</p>
+													<p>None of the shaders would initially load, resulting in just a pink screen for some builds. Once the game was playable it ran at about five frames per second. So there was alot of optimization to do.</p>
+													<p>Even though some effects had to be scaled down somewhat, the game was able to launch successfully</p>
+													<p>
+														<a href="http://www.ittledew.com/id1/" target="_blank">Ittle Dew 1, Ludosity</a>
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="project-slideshow empty">
+											<div id="skydive-container">
+												<div class="image-container">
+													<a class="button-floating button-left" onclick="plusdiv('skydive-slide', -1)">&#10094</a>
+													<a class="button-floating button-right" onclick="plusdiv('skydive-slide', 1)">&#10095</a>
+													
+													<img class="skydive-slide" src="./public/images/skydive_1.png">
+													<img class="skydive-slide" src="./public/images/skydive_2.png">
+												</div>
+												<div class="text-container">
+													<h2>Skydive</h2>
+													<div class="platform">Platforms: Unavailable</div>
+													<div class="release">Release date: June 6, 2012</div>
+													<p>This game was created together with 16 other student over ten weeks as part of a course called Game Development Project 2.</p>
+													<p>We decided to create this game using Unreal Development Kit, which helped the project in multiple ways. For example, this meant that our designers could use the landscape tool to create the map.</p>
+													<p>My main responsibility was to create some of the actual gameplay, meaning things like the trick and score system.</p>
+													<p>After the ten weeks, the project was continued for short while by a smaller group of people, but was ultimately abandoned.</p>
+												</div>
+											</div>
+										</div>
+										<div class="project-slideshow empty">
+											<div id="magicka-container">
+												<div class="image-container">
+													<a class="button-floating button-left" onclick="plusdiv('magicka-slide', -1)">&#10094</a>
+													<a class="button-floating button-right" onclick="plusdiv('magicka-slide', 1)">&#10095</a>
+													<img class="magicka-slide" src="./public/images/magicka_1.png">
+													<img class="magicka-slide" src="./public/images/magicka_2.png">
+													<img class="magicka-slide" src="./public/images/magicka_3.png">
+													<img class="magicka-slide" src="./public/images/magicka_4.png">
+												</div>
+												<div class="text-container">
+													<h2>Magicka: Wizards of the Square Tablet</h2>
+													<div class="platform">Platforms: Windows, iOS, Android</div>
+													<div class="release">Release date: October 31, 2013</div>
+													<p>Ludosity was contracted by Paradox Interactive to create a tablet spinoff of Magicka, resulting in this game.</p>
+													<p>After release, Paradox wanted to put the game on more platforms. I worked closely with them, porting the game to Amazon's (then unannounced) Fire TV.</p>
+													<p>This project mainly entailed creating gamepad controls for the game, and hooking it up to Amazon's micro transaction API.</p>
+													<p>The Fire TV never became the hit game console some had hoped for, and the port went largely unnoticed.</p>
+													<br/>
+													<p>
+														<a href="http://squaretablet.magickagame.com" target="_blank">Magicka: Wizards of the Square Tablet, Paradox Interactive</a>
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="project-slideshow empty">
+											<div id="steamworks-container">
+												<div class="image-container">
+													<img class="steamworks-slide" src="./public/images/steamworks_1.png">
+												</div>
+												<div class="text-container">
+													<h2>Ludosity's Steamworks Wrapper</h2>
+													<div class="platform">Platforms: Windows, Mac, Linux</div>
+													<div class="release">Release date: November 1, 2011 (Original version). September 4, 2014 (Current version)</div>
+													<p>Continuing the development of this project was my first task when joining the company as an intern. After catching up on the current code, it quickly became up to date.</p>
+													<p>With the lowered price from $300 to $50, continious updates and customer support the plugin gained popularity fast and was used by a great deal of developers wanting to get their game on steam.</p>
+													<p>The project was discontinued late in 2014 when I left the company. The code went open-source, but never gained much attention due to the dropped support and rising popularity of competitor steamworks.net</p>
+													<p>
+														<a href="https://github.com/HoggeL/Ludosity-s-Steamworks-Wrapper" target="_blank">My github fork of the project</a>
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="project-slideshow empty">
+											<div id="fretnice-container">
+												<div class="image-container">
+													<a class="button-floating button-left" onclick="plusdiv('fretnice-slide', -1)">&#10094</a>
+													<a class="button-floating button-right" onclick="plusdiv('fretnice-slide', 1)">&#10095</a>
+													<img class="fretnice-slide" src="./public/images/fretnice_1.png">
+													<img class="fretnice-slide" src="./public/images/fretnice_2.png">
+													<img class="fretnice-slide" src="./public/images/fretnice_3.png">
+													<img class="fretnice-slide" src="./public/images/fretnice_4.png">
+												</div>
+												<div class="text-container">
+													<h2>Fret Nice</h2>
+													<div class="platform">Platforms: Xbox 360, Playstation 3</div>
+													<div class="release">Release date: February 24, 2010</div>
+													<p>My time at Pieces Interactive, working at Fret Nice, was a very valuable experiance. Although short, I learned a great deal. It was my first job in the game development industry, and my first and only job as quality assurance. We also worked very closely with the developers of the game and were provided with internal test specifications from them, as well as TCR/TRC's from SONY and Microsft respectively.</p>
+													<p>The internal test spec was often about making sure levels could be completed, and things were balanced. The TCR/TRC was more technical, like making sure you could always go back to the playstation/xbox menu and thing like that.</p>
+													<p>
+														<a href="/public/resources/lor_pieces.pdf" target="_blank">Letter of recommendation</a>
+														<br />
+														<a href="http://piecesinteractive.se/games/fret-nice/" target="_blank">Fret Nice, Pieces Interactive</a>
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="project-slideshow empty">
+											<div id="school-container">
+												<div class="image-container">
+													<a class="button-floating button-left" onclick="plusdiv('school-slide', -1)">&#10094</a>
+													<a class="button-floating button-right" onclick="plusdiv('school-slide', 1)">&#10095</a>
+													<img class="school-slide" src="./public/images/school_1.png" title="Improved verlet cloth simulation using OpenGL">
+													<img class="school-slide" src="./public/images/school_2.png" title="Improved verlet cloth simulation using OpenGL">
+													<img class="school-slide" src="./public/images/school_3.png" title="AStar path finding application with Direct2D">
+													<img class="school-slide" src="./public/images/school_4.png" title="AStar path finding application with Direct2D">
+												</div>
+												<div class="text-container">
+													<h2>School projects</h2>
+													<div class="platform">Platforms: Windows</div>
+													<div class="release">Release date: varying</div>
+													<p>During my years attending University of Skövde, I made several projects for coursework. The projects showcased here are from courses in Game Physics and Artificial Intelligence, as they are easy to provide pictures for.</p>
+													<p>I will work towards setting up a github page with many of my projects which can't easily be provided through pictures. During a course in Operating Systems I added syscalls and reprogrammed the process scheduler in the minimalistic linux-based OS Minix.</p>
+												</div>
+											</div>
+										</div>
+									</div>
 									<div id="block-views-videos-block_1" class="block block-views region-odd odd region-count-1 count-1">
 										<div class="content">
 											<div class="view view-thumbnails view-id-thumbnails view-display-id-block_1 view-dom-id-2 view-thumbnails view-id-thumbnails view-display-id-block_1 view-dom-id-2 views-processed">
 												<div class="view-content">
 													<div class="views-row">
 														<h2 class="title">Ludosity's Steamworks Wrapper</h2>
-														<a data-href="/project/steamworks.html">
-															<img src="/public/images/steamworks_thumbnail.png" alt="Steamworks" title="Steamworks" width="250" height="135">
+														<a data-href="steamworks">
+															<img src="./public/images/steamworks_thumbnail.png" alt="Steamworks" title="Steamworks" width="250" height="135">
 														</a>
 														<p>A managed C# wrapper for Valve's steamworks API</p>    
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Skydive</h2>
-														<a data-href="/project/skydive.html">
-															<img src="/public/images/skydive_thumbnail.png" alt="Skydive" title="Skydive" width="250" height="135">
+														<a data-href="skydive">
+															<img src="./public/images/skydive_thumbnail.png" alt="Skydive" title="Skydive" width="250" height="135">
                                                         </a>
 														<p>Extreme sport game where you fly down a mountain in a skydiving suit</p>
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Magicka: Wizards of the Square Tablet</h2>
-                                                        <a data-href="/project/magicka.html">
-															<img src="/public/images/magicka_thumbnail.png" alt="Magicka: WotST" title="Magicka: WotST" width="250" height="135">
+                                                        <a data-href="magicka">
+															<img src="./public/images/magicka_thumbnail.png" alt="Magicka: WotST" title="Magicka: WotST" width="250" height="135">
                                                         </a>
 														<p>Travel through the world of Magicka, incinerating your friends along the way</p>
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Ittle Dew</h2>
-														<a data-href="/project/ittledew.html">
-															<img src="/public/images/ittle_thumbnail.png" alt="Ittle Dew" title="Ittle Dew" width="250" height="135">
+														<a data-href="ittledew">
+															<img src="./public/images/ittle_thumbnail.png" alt="Ittle Dew" title="Ittle Dew" width="250" height="135">
 														</a>
 														<p>Adventuress Ittle dew and Tippsie crash onto a strange island. Get ready for their greatest adventure yet.</p>
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">Fret Nice</h2>
-														<a data-href="/project/fretnice.html">
-															<img src="/public/images/fretnice_thumbnail.png" alt="Fret Nice" title="Fret Nice" width="250" height="135">
+														<a data-href="fretnice">
+															<img src="./public/images/fretnice_thumbnail.png" alt="Fret Nice" title="Fret Nice" width="250" height="135">
                                                         </a>
 														<p>Musical platformer designed to be played with a Guitar Hero controller</p>
 													</div>
 													<div class="views-row">
                                                         <h2 class="title">School projects</h2>
-														<a data-href="/project/school.html">
-															<img src="/public/images/school_thumbnail.png" alt="School" title="School" width="250" height="135">
+														<a data-href="school">
+															<img src="./public/images/school_thumbnail.png" alt="School" title="School" width="250" height="135">
                                                         </a>
 														<p>A showcase of a couple of smaller school projects</p>
 													</div>
@@ -104,10 +235,10 @@
                                                     <h2 class="title">About Me</h2>
                                                     <div class="content">
                                                         <div class="left-text">
-                                                            <img src="/public/images/placeholder-portrait.jpeg">
+                                                            <img src="./public/images/placeholder-portrait.jpeg">
                                                         </div>
                                                         <div class="right-text">
-															<p>My name is Håkan Levin Henriksson, I'm 26 years old and I live in Sweden. I grew up in Stockholm, where I attended primary school and also my first year of high school before I moved to Dalarna, one of Swedens counties, where I finished high school.</p>
+															<p>My name is Håkan Levin Henriksson, I'm 27 years old and I live in Sweden. I grew up in Stockholm, where I attended primary school and also my first year of high school before I moved to Dalarna, one of Swedens counties, where I finished high school.</p>
 															<p>During my second year in high school, when I was 16, I took a course in computer programming where we were taught the basics of C++, and I was immediately interested.</p>
 															<p>I've always had an interest in computers and how they work, I started learning HTML when I was just 13, but I really didn't know how to start build applications at that point. So when I started learning C++, my knowledge about computers in general was also deepened considerably.</p>
 															<p>Once I graduated from high school I attended the University of Skövde where I further studied programming and computer science. Since then I have worked for a total of two years in the game development industry, for a short while as a quality assurance tester, but mainly as a programmer.</p>
