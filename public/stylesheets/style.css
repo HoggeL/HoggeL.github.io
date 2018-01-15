@@ -39,6 +39,7 @@ p, ul, li {
 	background: url("../images/hogge-bg.jpg");
 	background-size: cover;
 	background-attachment: fixed;
+        min-height: 500px;
 }
 
 #skip-link, #page {
